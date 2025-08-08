@@ -26,7 +26,7 @@ IDE: VS Code
 ### 🔽 1. Clonar o Repositório
 Para começar, abra um terminal e execute o comando:
 ```
-git clone https://github.com/rafaelmoreno29/2025_FrontEnd.git
+git clone https://github.com/rafaelmoreno29/2025_2-AS403TSN3-WebFrontEnd.git
 ```
 ### 📦 2. Entrar na Pasta do Projeto
 ```
