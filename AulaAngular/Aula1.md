@@ -36,7 +36,6 @@
   <app-menu-superior></app-menu-superior>
   <router-outlet></router-outlet>
   ```
-- Ajuste do arquivo `app.ts` para importar e declarar os componentes.
 
 ## 7. Execução do Projeto
 - Comando para rodar o servidor de desenvolvimento:
