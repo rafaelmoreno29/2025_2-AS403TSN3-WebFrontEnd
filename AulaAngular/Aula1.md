@@ -1,9 +1,9 @@
 # Aula 1 - Passo a Passo do Projeto Angular
 
 ## 1. Criação do Projeto Angular
-- Utilizado o Angular CLI para criar o projeto base:
+- Utilizado o Angular CLI para criar o projeto base com suporte a módulos e roteamento:
   ```sh
-  ng new AulaAngular --defaults
+  ng new AulaAngular --standalone=false --routing
   ```
 - Estrutura inicial criada com pastas `src/`, `app/`, arquivos de configuração e dependências.
 
@@ -25,15 +25,10 @@
 
 ## 4. Edição dos Componentes
 - Implementação do layout e estilos em cada componente:
-  - `menu-superior.html`: estrutura do menu de navegação.
-  - `destaque.html`: área de destaque da página.
-  - `noticia.html`: exibição de notícias.
-- Estilização nos arquivos `.css` de cada componente.
+  - `menu-superior.html`: estrutura do menu de navegação baseado em bootstrap
 
 ## 5. Configuração de Rotas
-- Criação do arquivo de rotas `app-routing-module.ts`.
-- Definição das rotas para navegação entre os componentes.
-- Importação do módulo de rotas no `app-module.ts`.
+- O projeto foi criado com suporte a rotas (`--routing`), mas nenhuma rota foi configurada ou editada nesta aula.
 
 ## 6. Edição do App Principal
 - Modificação do arquivo `app.html` para incluir os componentes:
@@ -46,20 +41,16 @@
 ## 7. Execução do Projeto
 - Comando para rodar o servidor de desenvolvimento:
   ```sh
-  npm start
+  ng serve -o
   ```
 - Acesso ao projeto pelo navegador em `http://localhost:4200`.
 
-## 8. Testes
-- Estrutura de arquivos `.spec.ts` para testes unitários de cada componente.
-- Comando para rodar os testes:
-  ```sh
-  npm test
-  ```
 
-## 9. Outras Configurações
-- Ajuste dos arquivos de configuração (`angular.json`, `tsconfig.json`) conforme necessário.
-- Inclusão de favicon e ajustes no `index.html`.
+## 8. Instalação do ng-bootstrap
+- Instalação do pacote ng-bootstrap para utilizar componentes do Bootstrap no Angular:
+  ```sh
+  ng add @ng-bootstrap/ng-bootstrap
+  ```
 
 ---
 
