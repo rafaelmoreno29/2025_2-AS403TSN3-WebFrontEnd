@@ -6,7 +6,7 @@ import { App } from './app';
 import { MenuSuperior } from './menu-superior/menu-superior';
 import { Noticia } from './noticia/noticia';
 import { Destaque } from './destaque/destaque';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgbCarouselModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
