@@ -7,13 +7,15 @@ import { MenuSuperior } from './menu-superior/menu-superior';
 import { Noticia } from './noticia/noticia';
 import { Destaque } from './destaque/destaque';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ListarCliente } from './listar-cliente/listar-cliente';
 
 @NgModule({
   declarations: [
     App,
     MenuSuperior,
     Noticia,
-    Destaque
+    Destaque,
+    ListarCliente
   ],
   imports: [
     BrowserModule,
