@@ -1,0 +1,57 @@
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="error-page">
+                <!-- Ícone de erro -->
+                <div class="mb-4">
+                    <i class="bi bi-exclamation-triangle-fill text-warning" style="font-size: 8rem;"></i>
+                </div>
+
+                <!-- Número 404 -->
+                <h1 class="display-1 fw-bold text-primary mb-3">404</h1>
+
+                <!-- Título -->
+                <h2 class="h3 mb-3 text-secondary">Página Não Encontrada</h2>
+
+                <!-- Descrição -->
+                <p class="lead text-muted mb-4">
+                    Oops! A página que você está procurando não foi encontrada.
+                    <br>
+                    Ela pode ter sido movida, removida ou você digitou o endereço incorretamente.
+                </p>
+
+                <!-- Botões de ação -->
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <button class="btn btn-primary btn-lg" routerLink="/">
+                        <i class="bi bi-house-fill me-2"></i>
+                        Voltar ao Início
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-lg" onclick="window.history.back()">
+                        <i class="bi bi-arrow-left me-2"></i>
+                        Página Anterior
+                    </button>
+                </div>
+
+                <!-- Links úteis -->
+                <div class="mt-5">
+                    <h5 class="text-muted mb-3">Você pode tentar:</h5>
+                    <div class="d-flex justify-content-center gap-4 flex-wrap">
+                        <a href="/" class="text-decoration-none">
+                            <i class="bi bi-house me-1"></i>
+                            Página Inicial
+                        </a>
+                        <a href="/clientes" class="text-decoration-none">
+                            <i class="bi bi-people me-1"></i>
+                            Clientes
+                        </a>
+                        <a href="/contato" class="text-decoration-none">
+                            <i class="bi bi-envelope me-1"></i>
+                            Contato
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

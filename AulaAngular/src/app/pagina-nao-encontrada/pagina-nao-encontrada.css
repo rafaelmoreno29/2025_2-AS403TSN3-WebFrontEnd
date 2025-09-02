@@ -1,0 +1,67 @@
+.error-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.error-page .display-1 {
+    font-size: 8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #007bff, #6f42c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.error-page .bi-exclamation-triangle-fill {
+    animation: pulse 2s infinite;
+    filter: drop-shadow(0 4px 8px rgba(255, 193, 7, 0.3));
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.error-page .btn {
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+}
+
+.error-page .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.error-page a {
+    color: #6c757d;
+    transition: color 0.3s ease;
+}
+
+.error-page a:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .error-page .display-1 {
+        font-size: 5rem;
+    }
+
+    .error-page .bi-exclamation-triangle-fill {
+        font-size: 5rem !important;
+    }
+
+    .error-page {
+        padding: 1rem;
+    }
+}
