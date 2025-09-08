@@ -14,6 +14,7 @@ import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontra
 import { TelaPai } from './tela-pai/tela-pai';
 import { TelaFilho1 } from './tela-filho1/tela-filho1';
 import { TelaFilho2 } from './tela-filho2/tela-filho2';
+import { NoticiaDetalhe } from './noticia-detalhe/noticia-detalhe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TelaFilho2 } from './tela-filho2/tela-filho2';
     PaginaNaoEncontrada,
     TelaPai,
     TelaFilho1,
-    TelaFilho2
+    TelaFilho2,
+    NoticiaDetalhe
   ],
   imports: [
     BrowserModule,
