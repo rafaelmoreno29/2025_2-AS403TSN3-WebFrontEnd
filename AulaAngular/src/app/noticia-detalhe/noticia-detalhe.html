@@ -1,1 +1,9 @@
+<!--Interpolação-->
 <p>noticia-detalhe works! Id: {{ id }}</p>
+<!--Property Binding-->
+<img [src]="caminhoImagem">
+<!--Event Binding-->
+<button (click)="exibirMensagem()">Mensagem</button>
+<!--Two-way Binding-->
+<input [(ngModel)]="x" type="text">
+<p>Valor de x: {{ x }}</p>
