@@ -15,6 +15,7 @@ import { TelaPai } from './tela-pai/tela-pai';
 import { TelaFilho1 } from './tela-filho1/tela-filho1';
 import { TelaFilho2 } from './tela-filho2/tela-filho2';
 import { NoticiaDetalhe } from './noticia-detalhe/noticia-detalhe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NoticiaDetalhe } from './noticia-detalhe/noticia-detalhe';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
