@@ -8,6 +8,7 @@ import { TelaPai } from './tela-pai/tela-pai';
 import { TelaFilho1 } from './tela-filho1/tela-filho1';
 import { TelaFilho2 } from './tela-filho2/tela-filho2';
 import { NoticiaDetalhe } from './noticia-detalhe/noticia-detalhe';
+import { CalcularMedia } from './calcular-media/calcular-media';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
     ]
   },
   { path: 'noticia-detalhe/:id', component: NoticiaDetalhe },
+  { path: 'calcular-media', component: CalcularMedia },
   { path: '**', component: PaginaNaoEncontrada }
 ];
 
