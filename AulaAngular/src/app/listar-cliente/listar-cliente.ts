@@ -9,6 +9,7 @@ import { Cliente } from '../models/cliente';
 })
 export class ListarCliente {
   mostrarTabela: boolean = false;
+  nome: string = '';
   clientes: Cliente[] = [
     {
       id: 1, nome: 'Ana', celular: '99999-9999',
