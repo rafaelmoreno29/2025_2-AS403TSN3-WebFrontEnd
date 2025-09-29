@@ -26,6 +26,7 @@
                     <th scope="col">Celular</th>
                     <th scope="col">Cidade</th>
                     <th scope="col">Status</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -36,7 +37,8 @@
                         c.nome === nome ? 
                         'yellow' : 'white'}">{{c.nome}}</td>
                     <td>{{c.celular}}</td>
-                    <td>{{c.cidade}}</td>
+                    <td [ngClass]="{'SaoPaulo': 
+                    c.cidade === 'São Paulo'}">{{c.cidade}}</td>
                     <td>
                         @switch (c.cidade) {
                         @case ("São Paulo") {
@@ -50,6 +52,10 @@
                         }
                         }
                     </td>
+                    <td>
+                        <button type="button" class="btn btn-info" (click)="clienteSelecionado = c">
+                            Selecionar</button>
+                    </td>
                 </tr>
                 }
             </tbody>
@@ -57,3 +63,20 @@
         }
     </div>
 </div>
+
+<!-- Detalhe do item selecionado-->
+@if(clienteSelecionado != null) {
+<div class="row mt-3">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Detalhes do Cliente</h5>
+                <p>Nome: {{clienteSelecionado?.nome}}</p>
+                <p>Celular: {{clienteSelecionado?.celular}}</p>
+                <p>Cidade: {{clienteSelecionado?.cidade}}</p>
+                <button type="button" class="btn btn-secondary" (click)="clienteSelecionado = null">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+}

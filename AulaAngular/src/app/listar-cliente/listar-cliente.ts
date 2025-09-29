@@ -8,8 +8,9 @@ import { Cliente } from '../models/cliente';
   styleUrl: './listar-cliente.css'
 })
 export class ListarCliente {
-  mostrarTabela: boolean = false;
+  mostrarTabela: boolean = true;
   nome: string = '';
+  clienteSelecionado: Cliente | null = null;
   clientes: Cliente[] = [
     {
       id: 1, nome: 'Ana', celular: '99999-9999',
