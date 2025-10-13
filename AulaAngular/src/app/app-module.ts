@@ -15,7 +15,7 @@ import { TelaPai } from './tela-pai/tela-pai';
 import { TelaFilho1 } from './tela-filho1/tela-filho1';
 import { TelaFilho2 } from './tela-filho2/tela-filho2';
 import { NoticiaDetalhe } from './noticia-detalhe/noticia-detalhe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalcularMedia } from './calcular-media/calcular-media';
 
 @NgModule({
@@ -39,7 +39,8 @@ import { CalcularMedia } from './calcular-media/calcular-media';
     AppRoutingModule,
     NgbModule,
     NgbCarouselModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

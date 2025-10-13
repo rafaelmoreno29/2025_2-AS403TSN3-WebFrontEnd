@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cliente } from '../models/cliente';
 
 @Component({
   selector: 'app-tela-filho1',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './tela-filho1.css'
 })
 export class TelaFilho1 {
+  cliente: Cliente = {};
 
+  submit(form: any) {
+    if (form.valid) {
+      alert('Cliente cadastrado com sucesso!');
+    } else {
+      form.control.markAllAsTouched();
+    }
+  }
 }

@@ -14,15 +14,15 @@ export class ListarCliente {
   clientes: Cliente[] = [
     {
       id: 1, nome: 'Ana', celular: '99999-9999',
-      cidade: 'São Paulo'
+      cidade: 'São Paulo', email: ''
     },
     {
       id: 2, nome: 'Bruno', celular: '88888-8888',
-      cidade: 'Rio de Janeiro'
+      cidade: 'Rio de Janeiro', email: ''
     },
     {
       id: 3, nome: 'Carlos', celular: '77777-7777',
-      cidade: 'Belo Horizonte'
+      cidade: 'Belo Horizonte', email: ''
     }
   ];
 }
