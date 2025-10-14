@@ -1,7 +1,8 @@
 <h1>Exemplo - Reactive Form</h1>
 <form [formGroup]="form" (ngSubmit)="submit()">
     <label for="nome">Nome:</label>
-    <input type="text" id="nome" formControlName="nome" class="form-control" />
+    <input type="text" id="nome" formControlName="nome" class="form-control" [ngClass]="{'errorInput' : form.get('nome')?.invalid 
+    && form.get('nome')?.touched}" />
     <div class="error">
         @if((form.get('nome')?.touched ||
         form.get('nome')?.dirty) &&
@@ -13,7 +14,8 @@
         }
     </div>
     <label for="email">Email:</label>
-    <input type="email" id="email" formControlName="email" class="form-control" />
+    <input type="email" id="email" formControlName="email" class="form-control" [ngClass]="{'errorInput' : form.get('email')?.invalid 
+    && form.get('email')?.touched}" />
     <div class="error">
         @if((form.get('email')?.touched ||
         form.get('email')?.dirty) &&
@@ -29,5 +31,5 @@
         </span>
         }
     </div>
-    <button type="submit" [disabled]="form.invalid">Enviar</button>
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Enviar</button>
 </form>
