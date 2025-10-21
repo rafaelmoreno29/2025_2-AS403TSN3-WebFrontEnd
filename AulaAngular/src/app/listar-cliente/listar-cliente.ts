@@ -28,4 +28,15 @@ export class ListarCliente implements OnInit {
       }
     });
   }
+  excluirCliente(id: any): void {
+    this.clienteService.excluirCliente(id).subscribe({
+      next: () => {
+        alert('Cliente excluído com sucesso!');
+        this.buscarClientes();
+      },
+      error: (error: any) => {
+        console.error('Erro ao excluir cliente:', error);
+      }
+    });
+  }
 }
