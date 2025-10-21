@@ -17,6 +17,7 @@ import { TelaFilho2 } from './tela-filho2/tela-filho2';
 import { NoticiaDetalhe } from './noticia-detalhe/noticia-detalhe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalcularMedia } from './calcular-media/calcular-media';
+import { HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,11 @@ import { CalcularMedia } from './calcular-media/calcular-media';
     NgbModule,
     NgbCarouselModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [
+    provideHttpClient(withInterceptorsFromDi()),
     provideBrowserGlobalErrorListeners()
   ],
   bootstrap: [App]

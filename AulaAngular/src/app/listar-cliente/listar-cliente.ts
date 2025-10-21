@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../models/cliente';
+import { ClienteService } from '../services/cliente.service';
 
 @Component({
   selector: 'app-listar-cliente',
@@ -7,22 +8,24 @@ import { Cliente } from '../models/cliente';
   templateUrl: './listar-cliente.html',
   styleUrl: './listar-cliente.css'
 })
-export class ListarCliente {
+export class ListarCliente implements OnInit {
   mostrarTabela: boolean = true;
   nome: string = '';
   clienteSelecionado: Cliente | null = null;
-  clientes: Cliente[] = [
-    {
-      id: 1, nome: 'Ana', celular: '99999-9999',
-      cidade: 'São Paulo', email: ''
-    },
-    {
-      id: 2, nome: 'Bruno', celular: '88888-8888',
-      cidade: 'Rio de Janeiro', email: ''
-    },
-    {
-      id: 3, nome: 'Carlos', celular: '77777-7777',
-      cidade: 'Belo Horizonte', email: ''
-    }
-  ];
+  clientes: Cliente[] = [];
+  constructor(private clienteService: ClienteService) { }
+
+  ngOnInit(): void {
+    this.buscarClientes();
+  }
+  buscarClientes(): void {
+    this.clienteService.listarClientes().subscribe({
+      next: (data: Cliente[]) => {
+        this.clientes = data;
+      },
+      error: (error: any) => {
+        console.error('Erro ao buscar clientes:', error);
+      }
+    });
+  }
 }

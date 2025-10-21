@@ -21,6 +21,7 @@
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
+                    <th scope="col">Foto</th>
                     <th scope="col">Id</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Celular</th>
@@ -32,7 +33,10 @@
             <tbody>
                 @for (c of clientes; track $index) {
                 <tr>
-                    <th scope="row">{{c.id}}</th>
+                    <td>
+                        <img style="width: 100px;" [src]="c.imagem">
+                    </td>
+                    <td scope="row">{{c.id}}</td>
                     <td [ngStyle]="{'background-color': 
                         c.nome === nome ? 
                         'yellow' : 'white'}">{{c.nome}}</td>

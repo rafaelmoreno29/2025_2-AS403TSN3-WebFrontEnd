@@ -1,4 +1,5 @@
 export interface Cliente {
+    imagem?: string;
     id?: number;
     nome?: string;
     celular?: string;
