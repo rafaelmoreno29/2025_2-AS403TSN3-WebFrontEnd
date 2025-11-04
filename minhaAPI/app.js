@@ -1,9 +1,11 @@
 const express = require('express')
+const usuarioRouter = require('./routes/usuario');
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use('/usuario', usuarioRouter);
 
 app.get('/', (req, res) => {
     res.json({ 'mensagem': 'Olá, mundo!' });
