@@ -1,8 +1,14 @@
 const express = require('express')
+const mongoose = require('mongoose');
 const usuarioRouter = require('./routes/usuario');
 
 const app = express();
 const port = 3000;
+require('dotenv').config();
+const user = process.env.DB_USER;
+const password = process.env.DB_PASSWORD;
+const url = process.env.DB_URL;
+
 
 app.use(express.json());
 app.use('/usuario', usuarioRouter);
@@ -29,6 +35,12 @@ app.post('/somar', (req, res) => {
     res.json({ 'num1': num1, 'num2': num2, 'soma': soma });
 });
 
-app.listen(port, () => {
-    console.log(`Servidor executando em http://localhost:${port}`);
-});
+const mongoUrl = `mongodb+srv://${user}:${password}@${url}`;
+mongoose.connect(mongoUrl)
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`Servidor executando em http://localhost:${port}`);
+        });
+    }).catch((error) => {
+        console.error('Erro ao conectar ao MongoDB:', error);
+    });
