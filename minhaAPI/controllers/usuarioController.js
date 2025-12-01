@@ -1,51 +1,78 @@
 const UsuarioModel = require('../models/usuario');
 
-// Lógica para obter todos os usuários
-exports.getAllUsers = async (req, res) => {
+exports.obterTodos = async (req, res) => {
     try {
         const usuarios = await UsuarioModel.find();
-        // const usuarios = await UsuarioModel.find({ativo:true});
-
         res.json(usuarios);
     } catch (error) {
-        res.status(400).json(
-            {
-                'mensagem': 'Erro ao obter usuários - '
-                    + error.message
-            }
-        );
+        res.status(400).json({
+            'message': 'Erro ao obter usuários',
+            'error': error.message
+        });
     }
 };
-
-// Lógica para criar um novo usuário
-exports.createUser = async (req, res) => {
-    const novoUsuario = req.body;
+exports.obterPorId = async (req, res) => {
+    const id = req.params.id;
     try {
-        await UsuarioModel.create(novoUsuario);
-        res.status(201).json(novoUsuario);
-    } catch (error) {
-        res.status(400).json(
-            {
-                'mensagem': 'Erro ao criar usuário - '
-                    + error.message
-            }
-        );
-    };
-};
-exports.getUserById = async (req, res) => {
-    const userId = req.params.id;
-    try {
-        const usuario = await UsuarioModel.findById(userId);
+        const usuario = await UsuarioModel.findById(id);
         if (!usuario) {
             return res.status(404).json(
-                { 'mensagem': 'Usuário não encontrado' });
+                { 'message': 'Usuário não encontrado' }
+            );
         }
         res.json(usuario);
     } catch (error) {
-        res.status(400).json(
-            {
-                'mensagem': 'Erro ao obter usuário - ' + error.message
-            }
-        );
+        res.status(400).json({
+            'message': 'Erro ao obter usuário',
+            'error': error.message
+        });
+    };
+};
+exports.inserir = async (req, res) => {
+    const usuario = req.body;
+    try {
+        await UsuarioModel.create(usuario);
+        res.status(201).json(usuario);
+    } catch (error) {
+        res.status(400).json({
+            'message': 'Erro ao inserir usuário',
+            'error': error.message
+        });
+    }
+};
+exports.excluir = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const resultado = await UsuarioModel.findByIdAndDelete(id);
+        if (!resultado) {
+            return res.status(404).json(
+                { 'message': 'Usuário não encontrado' }
+            );
+        }
+        res.json({ 'message': 'Usuário excluído com sucesso' });
+    } catch (error) {
+        res.status(400).json({
+            'message': 'Erro ao excluir usuário',
+            'error': error.message
+        });
+    }
+};
+exports.atualizar = async (req, res) => {
+    const id = req.params.id;
+    const usuario = req.body;
+    try {
+        const resultado = await UsuarioModel.findByIdAndUpdate(id, usuario);
+        if (!resultado) {
+            return res.status(404).json(
+                { 'message': 'Usuário não encontrado' }
+            );
+        }
+        res.json({ 'message': 'Usuário atualizado com sucesso' });
+    }
+    catch (error) {
+        res.status(400).json({
+            'message': 'Erro ao atualizar usuário',
+            'error': error.message
+        });
     }
 };
